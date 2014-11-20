@@ -41,6 +41,7 @@
             $html  = MarkdownExtra::defaultTransform($text);
 ?>
         <div id="container">
+            <a id="editButton" class="editButton" href="#">Edit</a>
             <div id="rendered">
 <?php echo $html; ?>
             </div>
@@ -52,4 +53,5 @@
             </div>
         </div>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
      </html>

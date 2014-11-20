@@ -21,7 +21,7 @@
 8:10am Lower School Curriculum meeting
 
 | P   | C         | Rm    |                                              |
-| :-: | :-------: | :---: | :-                                           |
+| :-: | :-------: | :---: | :--                                           |
 | 1   | 6B4/Ph5   | 201   | Double slit experiment                       |
 | 2   |           |       |                                              |
 | 3   |           |       |                                              |
@@ -33,7 +33,7 @@
 8:15am Hussein's parents
 
 | P   | C         | Rm    |                                     |
-| :-: | :-------: | :---: | :-                                  |
+| :-: | :-------: | :---: | :--                                  |
 | 1   | RB1/Ph4   | 102   | Circular Motion / $a=\frac{v^2}{r}$ |
 | 2   | RB1/Ph4   | 102   |                                     |
 | 3   | LSC/Ph    | B08   | Last year's past paper as revision  |
@@ -59,7 +59,7 @@ Norway
 ### Mon 24 Nov
 
 | P |    C    | Rm  |  |
-|:-:|:-------:|:---:|:-|
+|:-:|:-------:|:---:|:--|
 | 1 |         |     |  |
 | 2 |         |     |  |
 | 3 | RB3/Ph2 | 102 |  |

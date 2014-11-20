@@ -16,14 +16,40 @@
         <![endif]-->
     </head>
     <body>
+        <?php
+            # Install PSR-0-compatible class autoloader 
+            spl_autoload_register(function($class){ 
+                require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php'; 
+            }); 
+            use \Michelf\MarkdownExtra;
+    
+            $url = 'http://petersharp.org/notes/index.php';
+            $file = 'planner.md';
+
+            if (isset($_POST['text'])) {
+                // save file
+                file_put_contents($file, $_POST['text']);
+
+                // redirect back to page
+                header(sprintf('Location: %s', $url));
+                printf('<a href="%s">Moved</a>.', htmlspecialchars($url));
+                exit();
+            }
+
+            // read text
+            $text = file_get_contents($file);
+            $html  = MarkdownExtra::defaultTransform($text);
+?>
         <div id="container">
-        </div
+            <div id="rendered">
+<?php echo $html; ?>
+            </div>
+            <div id="editor">
+                <h1>Editor</h1>
+                <form action="" method="post">
+                <textarea name="text"><?php echo $text; ?></textarea>
+                </form>
+            </div>
+        </div>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-     <script type="text/javascript">
-        $(document).ready(function(){
-            $('#toggleLink').click(function() {
-             $( 'tr td:nth-child(2)').each(function() { if ($(this).html() == "&nbsp;") { $(this).parent().toggle(); } });
-             });
-            });
-     </script>
-</html>
+     </html>

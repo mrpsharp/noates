@@ -17,12 +17,12 @@
     </head>
     <body>
         <?php
-            # Install PSR-0-compatible class autoloader 
-            spl_autoload_register(function($class){ 
-                require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php'; 
-            }); 
+            # Install PSR-0-compatible class autoloader
+            spl_autoload_register(function($class){
+                require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
+            });
             use \Michelf\MarkdownExtra;
-    
+
             $url = 'http://petersharp.org/notes/index.php';
             $file = 'planner.md';
 
@@ -41,13 +41,13 @@
             $html  = MarkdownExtra::defaultTransform($text);
 ?>
         <div id="container">
-            <a id="editButton" class="editButton" href="#">Edit</a>
+            <a id="editButton" class="button editButton" href="#">Edit</a>
             <div id="rendered">
 <?php echo $html; ?>
             </div>
             <div id="editor">
                 <h1>Editor</h1>
-                <form action="" method="post">
+                <form id="editorForm" action="" method="post">
                 <textarea name="text"><?php echo $text; ?></textarea>
                 </form>
             </div>

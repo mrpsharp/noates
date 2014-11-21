@@ -29,7 +29,7 @@
             });
             use \Michelf\MarkdownExtra;
 
-            $url = 'http://petersharp.org/notes/index.php';
+            $url = 'index.php';
             $file = 'planner.md';
 
             if (isset($_POST['text'])) {

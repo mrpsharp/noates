@@ -1,4 +1,4 @@
-editing = false;
+var editing = false;
 $(document).ready(function (){
     $('#editor').hide();
     $('#editButton').click(buttonClick);

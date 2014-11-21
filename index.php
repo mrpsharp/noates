@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>P Diary</title>
+        <title>PS Planner</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,7 +46,6 @@
 <?php echo $html; ?>
             </div>
             <div id="editor">
-                <h1>Editor</h1>
                 <form id="editorForm" action="" method="post">
                 <textarea name="text"><?php echo $text; ?></textarea>
                 </form>

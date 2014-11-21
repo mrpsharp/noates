@@ -5,14 +5,28 @@ $(document).ready(function (){
 });
 
 function buttonClick(){
-  console.log(editing);
 	if (editing) {
+		$('#editor-textbox').val(editor.getSession().getValue());
 		$('#editorForm').submit();
 	}
 	else {
-        $('#editor').toggle();
-        $('#rendered').toggle();
-        $('#editButton').text("Save").addClass("saveButton").removeClass("editButton");
-        editing = true;
+        	// show editor textbox
+        	// $('#editor').toggle();
+        	// Hide rendered div
+        	$('#rendered').toggle();
+        	
+        	// Show editor div
+     		$('#editor').toggle();
+     		
+     		//Set-up ACE
+      		var editor = ace.edit("editor");
+     		editor.renderer.setShowGutter(false); 
+     		editor.getSession().setValue($('#editor-textarea').val());
+		editor.getSession().setMode("ace/mode/markdown");
+
+        	
+        	// Change edit button
+        	$('#editButton').text("Save").addClass("saveButton").removeClass("editButton");
+        	editing = true;
     }
 }

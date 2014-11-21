@@ -127,15 +127,11 @@ table tr:hover td {
 	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);
 }
 
-textarea {
-    width: 100%;
-    height: 600px;
-}
-
 .button {
   position: fixed;
   top: 0.3em;
   right: 0.3em;
+  z-index: 100;
 }
 
 .editButton {
@@ -174,7 +170,9 @@ h1:first-of-type {
   margin-top: 0.3em;
 }
 
-
+#editor { 
+        height: 100vh;
+    }
 
 
 

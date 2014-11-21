@@ -1,4 +1,4 @@
-editing = false;
+var editing = false;
 $(document).ready(function (){
     $('#editor').hide();
     $('#editButton').click(buttonClick);
@@ -6,25 +6,28 @@ $(document).ready(function (){
 
 function buttonClick(){
 	if (editing) {
-		$('#editor-textbox').val(editor.getSession().getValue());
-		$('#editorForm').submit();
+		var textToSend = $('#editor').data('editor').getSession().getValue();
+		$.ajax({
+			type: "POST",
+			url: "index.php",
+			data: { text: textToSend },
+		}).done(function( msg ) {
+			location.reload(true);
+		});
 	}
 	else {
         	// show editor textbox
-        	// $('#editor').toggle();
+        	$('#editor').toggle();
         	// Hide rendered div
         	$('#rendered').toggle();
-        	
-        	// Show editor div
-     		$('#editor').toggle();
      		
      		//Set-up ACE
       		var editor = ace.edit("editor");
-     		editor.renderer.setShowGutter(false); 
-     		editor.getSession().setValue($('#editor-textarea').val());
-		editor.getSession().setMode("ace/mode/markdown");
+      		editor.setTheme("ace/theme/chrome");
+			editor.getSession().setMode("ace/mode/markdown");
+			editor.renderer.setShowGutter(false); 
+			$('#editor').data('editor', editor);
 
-        	
         	// Change edit button
         	$('#editButton').text("Save").addClass("saveButton").removeClass("editButton");
         	editing = true;

@@ -1,11 +1,13 @@
 # Play 2014
 
+[Almanack](http://intranet.westminster.org.uk/almanack)
+
 ## Week 10
 
 ### Wed 19 Nov
 
 | P   | C          | Rm    |                                |
-| :-: | :--------: | :---: | :------------------------                      |
+| :-----: | :--------: | :---: | :------------------------                      |
 | 1   | LSC/Ph     | 202   | Presenting and analysing data                  |
 | 2   | USC8/Ph    | 201   | Collisions                                     |
 | 3   |            |       | Observe NLC                                    |
@@ -21,7 +23,7 @@
 8:10am Lower School Curriculum meeting
 
 | P   | C         | Rm    |                                              |
-| :-: | :-------: | :---: | :--                                           |
+| :-: | :-------: | :---: | :-                                           |
 | 1   | 6B4/Ph5   | 201   | Double slit experiment                       |
 | 2   |           |       |                                              |
 | 3   |           |       |                                              |
@@ -33,7 +35,7 @@
 8:15am Hussein's parents
 
 | P   | C         | Rm    |                                     |
-| :-: | :-------: | :---: | :--                                  |
+| :-: | :-------: | :---: | :-                                  |
 | 1   | RB1/Ph4   | 102   | Circular Motion / $a=\frac{v^2}{r}$ |
 | 2   | RB1/Ph4   | 102   |                                     |
 | 3   | LSC/Ph    | B08   | Last year's past paper as revision  |
@@ -59,14 +61,14 @@ Norway
 ### Mon 24 Nov
 
 | P |    C    | Rm  |  |
-|:-:|:-------:|:---:|:--|
+|:-:|:-------:|:---:|:-|
 | 1 |         |     |  |
 | 2 |         |     |  |
 | 3 | RB3/Ph2 | 102 |  |
 | 4 | RB3/Ph2 | 102 |  |
 | 5 | USC8/Ph | 202 |  |
 | 6 | RB1/Ph4 | 201 |  |
-| 7 |         |     |  |
+| 7 |    Option     |    D39  |  What is knowledge? |
 
 4:45pm Challenge Meeting
 
@@ -90,13 +92,13 @@ Upper Shell Reports
 
 | P   | C          | Rm    |    |
 | :-: | :--------: | :---: | :- |
-| 1   | LSC/Ph     | 202   |    |
-| 2   | USC8/Ph    | 201   |    |
+| 1   | LSC/Ph     | 202   | COVER    |
+| 2   | USC8/Ph    | 201   | COVER   |
 | 3   |            |       |    |
 | 4   | [PHDEPT]   |       |    |
-| 5   | 6B2/Ph2    | 105   |    |
-| 6   | 6B2/Ph2    | 105   |    |
-| 7   | RB1/Ph4    | 105   |    |
+| 5   | 6B2/Ph2    | 105   | LECTURE DAY   |
+| 6   | 6B2/Ph2    | 105   | LECTURE DAY   |
+| 7   | RB1/Ph4    | 105   | COVER   |
 
 4:30pm Common Room meeting?
 
@@ -115,6 +117,8 @@ Cantandum & Fi parents to stay
 ### Fri 28 Nov
 
 *6th Form Reports*
+
+**Lower Shell Exams**
 
 | P |    C    | Rm  |  |
 |:-:|:-------:|:---:|:-|
@@ -143,6 +147,8 @@ Cantandum & Fi parents to stay
 
 *Remove and Lower Shell Reports*
 
+**Lower Shell Exams**
+
 | P |    C    | Rm  |  |
 |:-:|:-------:|:---:|:-|
 | 1 |         |     |  |
@@ -155,6 +161,8 @@ Cantandum & Fi parents to stay
 
 ### Tue 02 Dec
 
+**Lower Shell Exams**
+
 | P |    C    | Rm  |  |
 |:-:|:-------:|:---:|:-|
 | 1 |         |     |  |
@@ -166,6 +174,8 @@ Cantandum & Fi parents to stay
 ### Wed 03 Dec
 
 8:50am Invig up School
+
+**Lower Shell Exams**
 
 | P   | C          | Rm              |    |
 | :-: | :--------: | :---:           | :- |

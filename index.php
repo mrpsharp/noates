@@ -17,6 +17,12 @@
     </head>
     <body>
         <?php
+            # Disable caching
+            header("Expires: 0");
+            header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+            header("Cache-Control: no-store, no-cache, must-revalidate");
+            header("Cache-Control: post-check=0, pre-check=0", false);
+            header("Pragma: no-cache");
             # Install PSR-0-compatible class autoloader
             spl_autoload_register(function($class){
                 require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
@@ -43,13 +49,9 @@
         <div id="container">
             <a id="editButton" class="button editButton" href="#">Edit</a>
             <div id="rendered">
-<?php echo $html; ?>
+                <?php echo $html; ?>
             </div>
-            <div id="editor">
-                <h1>Editor</h1>
-                <form id="editorForm" action="" method="post">
-                <textarea name="text"><?php echo $text; ?></textarea>
-                </form>
+            <div id="editor"><?php echo $text ?>
             </div>
         </div>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

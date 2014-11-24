@@ -30,7 +30,7 @@
             use \Michelf\MarkdownExtra;
 
             $url = 'index.php';
-            $file = 'planner.md';
+            $file = 'files/planner.md';
 
             if (isset($_POST['text'])) {
                 // save file

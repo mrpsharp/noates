@@ -23,11 +23,6 @@
             header("Cache-Control: no-store, no-cache, must-revalidate");
             header("Cache-Control: post-check=0, pre-check=0", false);
             header("Pragma: no-cache");
-            # Install PSR-0-compatible class autoloader
-            spl_autoload_register(function($class){
-                require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
-            });
-            use \Michelf\MarkdownExtra;
 
             $url = 'index.php';
             $file = 'files/planner.md';
@@ -44,19 +39,21 @@
 
             // read text
             $text = file_get_contents($file);
-            $html  = MarkdownExtra::defaultTransform($text);
 ?>
         <div id="container">
             <a id="editButton" class="button editButton" href="#">Edit</a>
-            <div id="rendered">
-<?php echo $html; ?>
-            </div>
-            <div id="editor">
+            <div id="renderDiv"></div>
+            <div id="aceDiv"></div>
+            <div id="editorFormDiv">
                 <form id="editorForm" action="" method="post">
-                <textarea name="text"><?php echo $text; ?></textarea>
+                <textarea id="editorTextarea" name="text"><?php echo $text; ?></textarea>
+                <button type="submit">Submit Changes</button>
                 </form>
             </div>
         </div>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+     <script src="js/isMobile.min.js"></script>
     <script src="js/main.js"></script>
      </html>

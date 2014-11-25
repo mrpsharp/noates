@@ -176,6 +176,10 @@ h1:first-of-type {
   margin-top: 0.3em;
 }
 
+#aceDiv {
+    height: 100vh;
+    display: none;
+}
 
 
 

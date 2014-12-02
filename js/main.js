@@ -1,7 +1,8 @@
 var client;
+var text;
 $(document).ready(function() {
   // initialise the Dropbox client
-  var client = new Dropbox.Client({
+  client = new Dropbox.Client({
     key: "hqfc053v0iumulj"
   });
   // authenticate client
@@ -18,21 +19,25 @@ $(document).ready(function() {
     //
     // The user authorized your app, and everything went well.
     // client is a Dropbox.Client instance that you can use to make API calls.
-    render(client);
+    draw(client);
   });
-  $('#editButton').on("click", editClick);
-  render();
-
 });
 
-function render(client) {
-  client.readFile("Noates/planner.md", function(error, text) {
+function draw() {
+      $('#editDiv').hide();
+      $('#renderDiv').show();
+  client.readFile("Noates/planner.md", function(error, content) {
     if (error) {
       return showError(error);
     }
+    text = content;
+    render();
+    $('#editButton').on("click", editClick);
+    });
+}
+
+function render() {
     $('#renderDiv').html(marked(text));
-  });
-  $('#editorFormDiv').hide();
 }
 
 var showError = function(error) {
@@ -76,31 +81,34 @@ var showError = function(error) {
 
 function editClick() {
   $('#renderDiv').hide();
+  $('#editDiv').show();
   if (isMobile.any) {
-    $('#editorFormDiv').show();
+   console.log("mobile");
   } else {
-    url = "//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js";
+    var url = "//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js";
     $.getScript(url, function() {
-      $('#aceDiv').show();
-      var editor = ace.edit("aceDiv");
+      var editor = ace.edit("editDiv");
       editor.setTheme("ace/theme/chrome");
       editor.getSession().setMode("ace/mode/markdown");
       editor.renderer.setShowGutter(false);
-      editor.getSession().setValue($('#editorTextarea').val());
-      $('#editorForm').submit(function(e) {
-        var editor = ace.edit("aceDiv");
-        $('#editorTextarea').text(editor.getSession().getValue());
-      });
+      editor.getSession().setValue(text);
     });
   }
+  $('#renderDiv').hide();
+  $('#editButton').text("Save").addClass("saveButton").removeClass("editButton");
   $('#editButton').off("click", editClick);
   $('#editButton').click(function() {
-    $('#editorForm').submit()
+    // get ace text
+    var editor = ace.edit("editDiv");
+    text = editor.getSession().getValue();
+    // write file to dropbox
+    client.writeFile("Noates/planner.md", text, function(error, stat) {
+    if (error) {
+      return showError(error);  // Something went wrong.
+    }
+    // alert("File saved as revision " + stat.versionTag);
+      $('#editButton').text("Edit").addClass("editButton").removeClass("saveButton");
+    draw();
+    });
   });
-  $('#editButton').text("Save").addClass("saveButton").removeClass("editButton");
-}
-
-function render() {
-  $('#renderDiv').html(marked($('#editorTextarea').val()));
-  $('#editorFormDiv').hide();
 }

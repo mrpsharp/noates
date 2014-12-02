@@ -53,7 +53,6 @@
         </div>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
      <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.js"></script>
-     <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
      <script src="js/isMobile.min.js"></script>
     <script src="js/main.js"></script>
      </html>

@@ -1,5 +1,6 @@
 var client;
 var text;
+var loadedAce = 0;
 $(document).ready(function() {
   // initialise the Dropbox client
   client = new Dropbox.Client({
@@ -93,11 +94,17 @@ function editClick() {
       editor.renderer.setShowGutter(false);
       editor.getSession().setValue(text);
     });
+    $('#renderDiv').hide();
+    $('#editButton').text("Save").addClass("saveButton").removeClass("editButton");
+    $('#editButton').off("click", editClick);
+    $('#editButton').click(saveClick);
   }
-  $('#renderDiv').hide();
-  $('#editButton').text("Save").addClass("saveButton").removeClass("editButton");
-  $('#editButton').off("click", editClick);
-  $('#editButton').click(function() {
+}
+
+function saveClick() {
+  if (isMobile.any) {
+   console.log("mobile");
+  } else {
     // get ace text
     var editor = ace.edit("editDiv");
     text = editor.getSession().getValue();
@@ -108,7 +115,8 @@ function editClick() {
     }
     // alert("File saved as revision " + stat.versionTag);
       $('#editButton').text("Edit").addClass("editButton").removeClass("saveButton");
+    $('#editButton').off("click", saveClick);
     draw();
     });
-  });
+  }
 }

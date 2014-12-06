@@ -23,16 +23,6 @@ html {
     text-shadow: none;
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -138,6 +128,7 @@ textarea {
   position: fixed;
   top: 0.3em;
   right: 0.3em;
+  z-index: 100;
 }
 
 .editButton {
@@ -176,7 +167,7 @@ h1:first-of-type {
   margin-top: 0.3em;
 }
 
-#aceDiv {
+#editDiv {
     height: 100vh;
     display: none;
 }
